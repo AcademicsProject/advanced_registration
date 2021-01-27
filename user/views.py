@@ -1,6 +1,10 @@
 from django.shortcuts import render,HttpResponse,redirect
 
 # Create your views here.
+
+def home(request):
+    return render(request , 'user/index.html')
+
 def register(request):
     if request.method == 'POST':
         name = request.POST.get('name')
