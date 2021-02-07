@@ -6,19 +6,19 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Blog - Eterna Bootstrap Template</title>
+  <title>About - Eterna Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-    <link href="{%static 'img/favicon.png'%}" rel="icon" />
-  <link href="{%static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon" />
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-   <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" />
+ <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" />
   <link href="{%static 'vendor/icofont/icofont.min.css'%}" rel="stylesheet" />
   <link href="{%static 'vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet" />
   <link href="{%static 'vendor/animate.css/animate.min.css'%}" rel="stylesheet" />
@@ -26,7 +26,7 @@
   <link href="{%static 'vendor/venobox/venobox.css'%}" rel="stylesheet" />
 
   <!-- Template Main CSS File -->
-    <link href="{%static 'css/style.css'%}" rel="stylesheet" />
+      <link href="{%static 'css/style.css'%}" rel="stylesheet" />
 
 
   <!-- =======================================================
@@ -35,79 +35,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <style>
-  	
-	table {
-		overflow:hidden;
-		border:1px solid #d3d3d3;
-		background:#fefefe;
-		width:100%;
-		margin:5% auto 0;
-		-moz-border-radius:5px; /* FF1+ */
-		-webkit-border-radius:5px; /* Saf3-4 */
-		border-radius:5px;
-		-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-	}
-	
-	th, td {padding:18px 28px 18px; text-align:center; }
-	
-	th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
-	
-	td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
-	
-	tr.odd-row td {background:#f6f6f6;}
-	
-	td.first, th.first {text-align:left}
-	
-	td.last {border-right:none;}
-	
-	/*
-	Background gradients are completely unnessary but a neat effect.
-	*/
-	
-	td {
-		background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
-		background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
-	}
-	
-	tr.odd-row td {
-		background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
-		background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
-	}
-	
-	th {
-		background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
-		background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
-	}
-	
-	/*
-	I know this is annoying, but we need dditional styling so webkit will recognize rounded corners on background elements.
-	Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
-	
-	And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
-	*/
-	
-	tr:first-child th.first {
-		-moz-border-radius-topleft:5px;
-		-webkit-border-top-left-radius:5px; /* Saf3-4 */
-	}
-	
-	tr:first-child th.last {
-		-moz-border-radius-topright:5px;
-		-webkit-border-top-right-radius:5px; /* Saf3-4 */
-	}
-	
-	tr:last-child td.first {
-		-moz-border-radius-bottomleft:5px;
-		-webkit-border-bottom-left-radius:5px; /* Saf3-4 */
-	}
-	
-	tr:last-child td.last {
-		-moz-border-radius-bottomright:5px;
-		-webkit-border-bottom-right-radius:5px; /* Saf3-4 */
-	}
-  </style>
 </head>
 
 <body>
@@ -145,7 +72,7 @@
 
           <li class="drop-down"><a href="#">About</a>
             <ul>
-              <li><a href="about.html">About Us</a></li>
+              <li class="active"><a href="about.html">About Us</a></li>
               <li><a href="team.html">Team</a></li>
 
               <li class="drop-down"><a href="#">Drop Down 2</a>
@@ -163,7 +90,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          <li class="active"><a href="blog.html">Blog</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
 
         </ul>
@@ -180,132 +107,180 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Blog</li>
+          <li>About Us</li>
         </ol>
-        <h2>Blog</h2>
+        <h2>{{slug}}</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
       <div class="container">
 
         <div class="row">
-
-          <div class="col-lg-8 entries">
-            <div id="content">
-
-    <table cellspacing="0">
-    <tr>
-      <th>Course ID</th>
-      <th>Name</th>
-      <th>Status</th>
-      <th>extra</th>
-      
-
-    </tr>
-    
-    {% for course in courses %}
-    
-    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td></tr>
-    
-    {% endfor %}
-    
-    </table>
-
-</div>
+            <h5>Description - Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi deleniti commodi et, fugiat suscipit quidem dignissimos temporibus distinctio. Incidunt doloremque repellendus ipsa, nisi soluta similique itaque provident voluptas vel accusantium?</h5>
+          
+          <div class="col-lg-6 pt-4 pt-lg-2 content">
             
-          </div><!-- End blog entries list -->
+            <ul>
+              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi</li>
+            </ul>
 
-          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-2 content">
+            
+            <ul>
+              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi</li>
+            </ul>
+            
+          </div>
+        </div>
 
-            <div class="sidebar">
+      </div>
+    </section><!-- End About Section -->
 
-              <h3 class="sidebar-title">Search</h3>
-              <div class="sidebar-item search-form">
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
 
-                <form action="courses">
-                  <input type="text" name='search'>
-                  <button type="submit"><i class="icofont-search"></i></button>
-                </form>
+        <div class="row no-gutters">
 
-              </div><!-- End sidebar search formn-->
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="icofont-simple-smile"></i>
+              <span data-toggle="counter-up">232</span>
+              <p><strong>Happy Clients</strong> consequuntur quae qui deca rode</p>
+              <a href="#">Find out more &raquo;</a>
+            </div>
+          </div>
 
-              <h3 class="sidebar-title">Categories</h3>
-              <div class="sidebar-item categories">
-                <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="icofont-document-folder"></i>
+              <span data-toggle="counter-up">521</span>
+              <p><strong>Projects</strong> adipisci atque cum quia aut numquam delectus</p>
+              <a href="#">Find out more &raquo;</a>
+            </div>
+          </div>
 
-              </div><!-- End sidebar categories-->
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="icofont-live-support"></i>
+              <span data-toggle="counter-up">1,463</span>
+              <p><strong>Hours Of Support</strong> aut commodi quaerat. Aliquam ratione</p>
+              <a href="#">Find out more &raquo;</a>
+            </div>
+          </div>
 
-              <h3 class="sidebar-title">Recent Posts</h3>
-              <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog-recent-1.jpg" alt="">
-                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog-recent-2.jpg" alt="">
-                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog-recent-3.jpg" alt="">
-                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog-recent-4.jpg" alt="">
-                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog-recent-5.jpg" alt="">
-                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-              </div><!-- End sidebar recent posts-->
-
-              <h3 class="sidebar-title">Tags</h3>
-              <div class="sidebar-item tags">
-                <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
-                </ul>
-
-              </div><!-- End sidebar tags-->
-
-            </div><!-- End sidebar -->
-
-          </div><!-- End blog sidebar -->
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="icofont-users-alt-5"></i>
+              <span data-toggle="counter-up">15</span>
+              <p><strong>Hard Workers</strong> rerum asperiores dolor molestiae doloribu</p>
+              <a href="#">Find out more &raquo;</a>
+            </div>
+          </div>
 
         </div>
 
       </div>
-    </section><!-- End Blog Section -->
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Clients Section ======= -->
+    
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="testimonial-item">
+              <h3>Saul Goodman</h3>
+              <h4>Ceo &amp; Founder</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4 mt-lg-0">
+              <h3>Sara Wilsson</h3>
+              <h4>Designer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <h3>Jena Karlis</h3>
+              <h4>Store Owner</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <h3>Matt Brandon</h3>
+              <h4>Freelancer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <h3>John Larson</h3>
+              <h4>Entrepreneur</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <h3>Emily Harison</h3>
+              <h4>Store Owner</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Eius ipsam praesentium dolor quaerat inventore rerum odio. Quos laudantium adipisci eius. Accusamus qui iste cupiditate sed temporibus est aspernatur. Sequi officiis ea et quia quidem.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
 
   </main><!-- End #main -->
 
@@ -399,7 +374,7 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
- <script src="{%static 'vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{%static 'vendor/jquery/jquery.min.js'%}"></script>
   <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
   <script src="{%static 'vendor/jquery.easing/jquery.easing.min.js'%}"></script>
   <script src="{%static 'vendor/php-email-form/validate.js'%}"></script>

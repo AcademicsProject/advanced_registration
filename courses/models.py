@@ -10,9 +10,11 @@ class Course(models.Model):
     description = models.CharField(max_length=255)
     teacher = models.CharField(max_length=100)
     status = models.CharField(max_length=10)
-
+    slug = models.SlugField(unique=True)
     enrollee = models.ManyToManyField(User, related_name="student", blank=True) 
 
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('article_detail', kwargs={'slug': self.slug})
