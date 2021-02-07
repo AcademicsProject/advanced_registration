@@ -105,11 +105,16 @@
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>About Us</li>
-        </ol>
+        
         <h2>{{slug}}</h2>
+
+        <ol>
+        <form action="" method ='POST'>
+        {% csrf_token %}
+          <li><button type='submit' ><h4>Register</h4></button></li>
+
+        </form>
+        </ol>
 
       </div>
     </section><!-- End Breadcrumbs -->

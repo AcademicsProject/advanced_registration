@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from .models import Course
 from django.db.models import Q
+from user.models import Profile
 
 # Create your views here.
 
@@ -19,8 +20,16 @@ def home(request):
 
 
 def details(request,slug):
-    
-    # course = request.objects.filter(slug=slug).first()
-    context={'slug':slug}
+    if request.method == 'POST':
+        
+        profile = Profile.objects.get(user = request.user) 
+        if slug in profile.courses:
+            return HttpResponse('ERROR') 
+        else:
+            profile.courses.add(slug)
+
+    context = {'slug':slug}
     return render(request ,'courses/details.html',context )
+
+
 

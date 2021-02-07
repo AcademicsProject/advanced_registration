@@ -46,12 +46,10 @@ def login_fn(request):
 
         
 def logout_fn(request):
-    if request.method == 'POST':
-        logout(request)
-        return redirect('/')
-    else:
-        return HttpResponse('ERROR')
-
+    
+    logout(request)
+    return redirect('/')
+    
 
 
 
