@@ -201,14 +201,16 @@
       <th>Course ID</th>
       <th>Name</th>
       <th>Status</th>
-      <th>extra</th>
+      <th>Link</th>
+
+      
       
 
     </tr>
     
     {% for course in courses %}
     
-    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td></tr>
+    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td><td><a href="{{course.id}}">Link</a></td></tr>
     
     {% endfor %}
     
@@ -225,7 +227,7 @@
               <h3 class="sidebar-title">Search</h3>
               <div class="sidebar-item search-form">
 
-                <form action="courses">
+                <form action="">
                   <input type="text" name='search'>
                   <button type="submit"><i class="icofont-search"></i></button>
                 </form>

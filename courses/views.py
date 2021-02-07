@@ -11,9 +11,12 @@ def home(request):
         courses = Course.objects.filter( Q(name__icontains = search) | Q(teacher__icontains = search)    )
     else:
         courses = Course.objects.all()
+
     context={'courses':courses}
 
     return render(request , 'courses/home.html',context)
+
+
 
 def details(request,slug):
     
