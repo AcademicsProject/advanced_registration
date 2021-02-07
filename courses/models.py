@@ -9,6 +9,8 @@ class Course(models.Model):
     strength = models.IntegerField()
     description = models.CharField(max_length=255)
     teacher = models.CharField(max_length=100)
+    status = models.CharField(max_length=10)
+
     enrollee = models.ManyToManyField(User, related_name="student", blank=True) 
 
     def __str__(self):
