@@ -31,5 +31,8 @@ def details(request,slug):
     context = {'slug':slug}
     return render(request ,'courses/details.html',context )
 
+def tracks(request):
+    return render(request,'courses/tracks.html')
+
 
 
