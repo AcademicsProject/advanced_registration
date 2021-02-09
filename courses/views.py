@@ -24,7 +24,7 @@ def home(request):
         courses = courses.filter( Q(id__in = course_list)  )
 
     tracks = Track.objects.all()
-    context={'courses':courses , 'tracks':tracks}
+    context={'courses':courses , 'tracks':tracks , 'trackId' : trackId}
 
     return render(request , 'courses/home.html',context)
 

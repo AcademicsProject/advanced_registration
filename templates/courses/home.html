@@ -239,7 +239,11 @@
               <div class="sidebar-item tags">
                 <ul>
                 {% for track in tracks  %}
+                 {% if track.id is trackId %}
+                  <li><a style="background: #e96b56;color: white"href="../courses?track={{track.id}}">{{track.name}}</a></li>
+                 {% else %} 
                   <li><a href="../courses?track={{track.id}}">{{track.name}}</a></li>
+                  {% endif %}
                 {% endfor %}
                   
                 </ul>
