@@ -13,6 +13,8 @@ class Course(models.Model):
     teacher = models.CharField(max_length=100)
     status = models.CharField(max_length=10)
     slug = models.SlugField(unique=True)
+    
+
     relation = models.ManyToManyField(
         Profile,
         through='Profile_Course',
@@ -41,9 +43,10 @@ class Track(models.Model):
 
     
 class Profile_Course(models.Model):
-
+    STATUS = ( ('R','Registered') , ('C','Creditted')  )
     profile = models.ForeignKey(Profile , on_delete=models.CASCADE)
     course = models.ForeignKey(Course ,on_delete=models.CASCADE)
+    status = models.CharField(max_length=1,choices= STATUS  )
 
     def __str__(self):
         return self.profile.name+" is enrolled in "+self.course.name
@@ -54,4 +57,11 @@ class Track_Course(models.Model):
 
     def __str__(self):
         return self.track.name+" has a course on "+self.course.name
+
+class Prerequisite(models.Model):
+    pre_course = models.ForeignKey( Course ,on_delete=models.CASCADE ,related_name='pre_course')
+    course = models.ForeignKey(Course , related_name='course',on_delete=models.CASCADE )
+
+    def __str__(self):
+        return self.pre_course.name+" is prerequisite of "+self.course.name
 
