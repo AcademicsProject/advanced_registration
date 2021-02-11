@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link rel="stylesheet" type="text/css" href="https://s.cdpn.io/55638/selectize.0.6.9.css">
    <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" />
   <link href="{%static 'vendor/icofont/icofont.min.css'%}" rel="stylesheet" />
   <link href="{%static 'vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet" />
@@ -80,7 +81,19 @@
 		background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
 		background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
 	}
-	
+  section {
+    padding: 5em;
+  }
+  section label > span {
+    display: inline-block;
+    padding-top: 0.5em;
+    vertical-align: top;
+  }
+  section label > span:after {
+    content: ":";
+    padding-right: 0.5em;
+  }
+  	
 	/*
 	I know this is annoying, but we need dditional styling so webkit will recognize rounded corners on background elements.
 	Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
@@ -196,6 +209,7 @@
           <div class="col-lg-8 entries">
             <div id="content">
 
+
     <table cellspacing="0">
     <tr>
       <th>Sno.</th>
@@ -207,7 +221,8 @@
     
     {% for course in courses %}
     
-    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td><td><a href="details/{{course.slug}}">Link</a></td></tr>
+    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td><td>
+      <a href="{% url 'course_details' course.slug%}">Link</a></td></tr>
     
     {% endfor %}
     
@@ -217,6 +232,8 @@
             
           </div><!-- End blog entries list -->
 
+          
+
           <div class="col-lg-4">
 
             <div class="sidebar">
@@ -224,10 +241,24 @@
               <h3 class="sidebar-title">Add Necessary Courses</h3>
               <div class="sidebar-item search-form">
 
-                <form action="">
+                <form action="" method="POST">
+
+                  {% csrf_token %}
+
                   <input type="text" name='search'>
+                  <section><label><span>Filter</span><select name="course" id="course" multiple="multiple" placeholder="Filter by..." style="width: 30em">
+                    {% for course in courses %}
+
+                    <option value="{{course.id}}">{{course.name}}</option>
+                    
+                    {% endfor %}
+
+                    </select></label>
+                  </section> 
                   <button type="submit"><i class="icofont-search"></i></button>
                 </form>
+
+
 
               </div><!-- End sidebar search formn-->
 
@@ -356,8 +387,21 @@
   <script src="{%static 'vendor/venobox/venobox.min.js'%}"></script>
 
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://s.cdpn.io/55638/selectize.min.0.6.9.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      var selector = $('#course');
+      selector.selectize({
+        plugins: ['remove_button']
+      });
+    </script>
+
+
   <!-- Template Main JS File -->
   <script src="{%static 'js/main.js'%}"></script>
+
 
 </body>
 
