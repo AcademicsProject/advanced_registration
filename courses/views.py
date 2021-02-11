@@ -53,6 +53,7 @@ def details(request,slug):
     if request.method == 'GET':
         context = {'slug':slug}
         return render(request ,'courses/details.html',context )
+        
 
 def tracks(request):
     tracks = Track.objects.all()
