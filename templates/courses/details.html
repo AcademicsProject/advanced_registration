@@ -2,39 +2,48 @@
 
 {% block title %}{% endblock title %}
 
-{% block body %}
 
+{% block body %}
+  
   <main id="main">
+
+  
 
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
+    
       <div class="container">
 
         
-        <h2>{{slug}}</h2>
+        <h2>{{course.name}}</h2>
 
         <ol>
+        {% if eligible=1 %}        
         <form action="" method ='POST'>
         {% csrf_token %}
           <li><button type='submit' ><h4>Register</h4></button></li>
 
         </form>
+        {% endif %}
         </ol>
 
       </div>
     </section><!-- End Breadcrumbs -->
-
+    
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
+          <h5>Description </h5>
+          {{course.description}}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dignissimos perspiciatis. Voluptates aliquid ex corporis perferendis quod necessitatibus possimus dolorem libero laborum minima numquam, facere veniam dignissimos nihil. Iure, atque?
+        <br>
+        <br>
+        <h5>Prerequistes </h5>
         <div class="row">
-            <h5>Description - Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi deleniti commodi et, fugiat suscipit quidem dignissimos temporibus distinctio. Incidunt doloremque repellendus ipsa, nisi soluta similique itaque provident voluptas vel accusantium?</h5>
-          
           <div class="col-lg-6 pt-4 pt-lg-2 content">
             
             <ul>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="icofont-close-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
               <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
               <li><i class="icofont-check-circled"></i> Ullamco laboris nisi</li>
             </ul>
@@ -62,37 +71,36 @@
 
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
-              <i class="icofont-simple-smile"></i>
-              <span data-toggle="counter-up">232</span>
-              <p><strong>Happy Clients</strong> consequuntur quae qui deca rode</p>
-              <a href="#">Find out more &raquo;</a>
+              <i class="icofont-brainstorming"></i>
+              <span data-toggle="counter-up"> {{course.projects}}  </span>
+              <p><strong>Projects - </strong> Implement Innovatve Ideas</p>
+
+
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
-              <i class="icofont-document-folder"></i>
-              <span data-toggle="counter-up">521</span>
-              <p><strong>Projects</strong> adipisci atque cum quia aut numquam delectus</p>
-              <a href="#">Find out more &raquo;</a>
+              <i class="icofont-paper"></i>
+              <span data-toggle="counter-up">{{course.assignments}} </span>
+              <p><strong>Assignments - </strong> Practice the concepts</p>
+
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
-              <i class="icofont-live-support"></i>
-              <span data-toggle="counter-up">1,463</span>
-              <p><strong>Hours Of Support</strong> aut commodi quaerat. Aliquam ratione</p>
-              <a href="#">Find out more &raquo;</a>
+              <i class="icofont-instrument"></i>
+              <span data-toggle="counter-up">{{course.practicals}} </span>
+              <p><strong>Practicals - </strong> Implement your Learnings</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
-              <i class="icofont-users-alt-5"></i>
-              <span data-toggle="counter-up">15</span>
-              <p><strong>Hard Workers</strong> rerum asperiores dolor molestiae doloribu</p>
-              <a href="#">Find out more &raquo;</a>
+              <i class="icofont-read-book"></i>
+              <span data-toggle="counter-up">{{course.exams}} </span>
+              <p><strong>Exams - </strong> Test the knowledge gained</p>
             </div>
           </div>
 

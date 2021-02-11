@@ -1,364 +1,375 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-  <title>Blog - Eterna Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
-  <!-- Favicons -->
-    <link href="{%static 'img/favicon.png'%}" rel="icon" />
-  <link href="{%static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-   <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" />
-  <link href="{%static 'vendor/icofont/icofont.min.css'%}" rel="stylesheet" />
-  <link href="{%static 'vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet" />
-  <link href="{%static 'vendor/animate.css/animate.min.css'%}" rel="stylesheet" />
-  <link href="{%static 'vendor/owl.carousel/assets/owl.carousel.min.css'%}" rel="stylesheet" />
-  <link href="{%static 'vendor/venobox/venobox.css'%}" rel="stylesheet" />
-
-  <!-- Template Main CSS File -->
-    <link href="{%static 'css/style.css'%}" rel="stylesheet" />
-
-
-  <!-- =======================================================
-  * Template Name: Eterna - v2.2.1
-  * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  <style>
-  	
-	table {
-		overflow:hidden;
-		border:1px solid #d3d3d3;
-		background:#fefefe;
-		width:100%;
-		margin:5% auto 0;
-		-moz-border-radius:5px; /* FF1+ */
-		-webkit-border-radius:5px; /* Saf3-4 */
-		border-radius:5px;
-		-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-	}
-	
-	th, td {padding:18px 28px 18px; text-align:center; }
-	
-	th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
-	
-	td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
-	
-	tr.odd-row td {background:#f6f6f6;}
-	
-	td.first, th.first {text-align:left}
-	
-	td.last {border-right:none;}
-	
-	/*
-	Background gradients are completely unnessary but a neat effect.
-	*/
-	
-	td {
-		background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
-		background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
-	}
-	
-	tr.odd-row td {
-		background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
-		background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
-	}
-	
-	th {
-		background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
-		background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
-	}
-	
-	/*
-	I know this is annoying, but we need dditional styling so webkit will recognize rounded corners on background elements.
-	Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
-	
-	And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
-	*/
-	
-	tr:first-child th.first {
-		-moz-border-radius-topleft:5px;
-		-webkit-border-top-left-radius:5px; /* Saf3-4 */
-	}
-	
-	tr:first-child th.last {
-		-moz-border-radius-topright:5px;
-		-webkit-border-top-right-radius:5px; /* Saf3-4 */
-	}
-	
-	tr:last-child td.first {
-		-moz-border-radius-bottomleft:5px;
-		-webkit-border-bottom-left-radius:5px; /* Saf3-4 */
-	}
-	
-	tr:last-child td.last {
-		-moz-border-radius-bottomright:5px;
-		-webkit-border-bottom-right-radius:5px; /* Saf3-4 */
-	}
-  </style>
 </head>
-
 <body>
+<h1>Dropdowns</h1>
 
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-none d-lg-block">
-    <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="icofont-phone"></i> +1 5589 55488 55
-      </div>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container d-flex">
-
-      <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html"><span>Eterna</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-
-          <li class="drop-down"><a href="#">About</a>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="team.html">Team</a></li>
-
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li class="active"><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Blog</li>
-        </ol>
-        <h2>Blog</h2>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-8 entries">
-            <div id="content">
-
-    <table cellspacing="0">
-    <tr>
-      <th>Sno.</th>
-      <th>Name</th>
-      <th>Roll No.</th>
-      <th>Email</th>
-
-    </tr>
-    
-    {% for course in courses %}
-    
-    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td><td><a href="details/{{course.slug}}">Link</a></td></tr>
-    
-    {% endfor %}
-    
-    </table>
-
+<h2>Basic Dropdown</h2>
+<div class='ui dropdown'>
+  <div class='text'>C</div>
+  <i class='dropdown icon'></i> 
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
 </div>
-            
-          </div><!-- End blog entries list -->
 
-          <div class="col-lg-4">
+<h2>Selection Dropdown</h2>
+<div class='ui selection dropdown'>
+  <div class='text'></div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
 
-            <div class="sidebar">
+<h2>Search Selection</h2>
+<div class='ui  search selection dropdown'>
+  <div class='text'></div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
 
-              <h3 class="sidebar-title">Add Necessary Courses</h3>
-              <div class="sidebar-item search-form">
+<h2>Multiple Selection Dropdown</h2>
+<div class='ui multiple selection dropdown'>
+  <div class='text'></div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
 
-                <form action="">
-                  <input type="text" name='search'>
-                  <button type="submit"><i class="icofont-search"></i></button>
-                </form>
+<h2>Multiple Search Selection</h2>
+<div class='ui multiple search selection dropdown'>
+  <div class='text'></div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
 
-              </div><!-- End sidebar search formn-->
+<h2>Search Dropdown</h2>
+<div class='ui search dropdown'>
+  <div class='text'>Choose a Language</div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
 
-          
-              <h3 class="sidebar-title">Tracks</h3>
-              <div class="sidebar-item tags">
-                <ul>
-                {% for track in tracks  %}
-                  <li><a href="../courses?track={{track.id}}">{{track.name}}</a></li>
-                {% endfor %}
-                  
-                </ul>
+<h2>Search-In Dropdown</h2>
+<div class='ui dropdown'>
+  <div class='text'>Choose a Language</div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='ui icon search input'>
+      <i class='search icon'></i>
+      <input type="text" placeholder='Search tags...'/>
+    </div>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
 
-              </div><!-- End sidebar tags-->
+<h2>Inline Dropdown</h2>
+<span>For this project, I am using 
+<div class='ui inline dropdown'>
+  <div class='text'>Choose a Language</div>
+    <i class='dropdown icon'></i>
+    <div class='menu'>
+      <div class='item'>C</div>
+      <div class='item'>C++</div>
+      <div class='item'>C#</div>
+      <div class='item'>Java</div>
+      <div class='item'>JavaScript</div>
+    </div>
+  </div>
+</span>
 
-            </div><!-- End sidebar -->
+<h2>Pointing Dropdown</h2>
+<div class='ui top left pointing dropdown'>
+  <div class='text'>C</div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
 
-          </div><!-- End blog sidebar -->
+<h2>Floating Dropdown</h2>
+<div class='ui floating dropdown'>
+  <div class='text'>C</div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
 
+
+<h2>Simple Dropdown</h2>
+<p>No need for javascript support in browser.</p>
+<div class='ui simple dropdown'>
+  <div class='text'>C</div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
+
+<h1>Content</h1>
+<h2>Header</h2>
+<div class='ui selection dropdown'>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='header'>Languages</div>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
+
+<h2>Divider</h2>
+<div class='ui selection dropdown'>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='header'>Languages</div>
+    <div class='divider'></div>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
+
+<h2>Icon</h2>
+<div class='ui selection dropdown'>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='header'>
+      <i class='laptop icon'></i>
+      Languages
+    </div>
+    <div class='divider'></div>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+  </div>
+</div>
+
+<h2>Description</h2>
+<div class='ui selection dropdown'>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='header'>
+      <i class='laptop icon'></i>
+      Languages
+    </div>
+    <div class='divider'></div>
+    <div class='item'>
+      <span class='description'>20</span>
+      <span class='text'>C</span>
+    </div>
+    <div class='item'>
+      <span class='description'>42</span>
+      <span class='text'>C++</span>
+    </div>
+    <div class='item'>
+      <span class='description'>318</span>
+      <span class='text'>C#</span>
+    </div>
+    <div class='item'>
+      <span class='description'>320</span>
+      <span class='text'>Java</span>
+    </div>
+        <div class='item'>
+      <span class='description'>12030</span>
+      <span class='text'>Javascript</span>
+    </div>
+  </div>
+</div>
+
+<h2>Lables</h2>
+<div class='ui selection dropdown'>
+  <div class='text'></div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>
+      <div class='ui red label'>Machine</div>
+      C
+    </div>
+     <div class='item'>
+      <div class='ui red label'>Machine</div>
+      C++
+    </div>
+     <div class='item'>
+      <div class='ui blue label'>IL</div>
+      C#
+    </div>
+  </div>
+</div>
+
+<h2>Message</h2>
+<p>Show error message on dropdown.</p>
+<div class='ui floating labeled dropdown'>
+  <div class='text'>Select a language</div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='ui error message'>
+      <div class='header'>Uh oh!</div>
+      <p>Could not fetch languages from our serevice!</p>
+    </div>
+  </div>
+</div>
+
+<h2>Floated</h2>
+<div class='ui fluid selection dropdown'>
+  <div class='text'></div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>
+      <i class='bomb right floated icon'></i>
+      <div class='ui red label'>Machine</div>
+      C
+    </div>
+     <div class='item'>
+       <i class='puzzle right floated icon'></i>
+      <div class='ui red label'>Machine</div>
+      C++
+    </div>
+     <div class='item'>
+       <i class='gift right floated icon'></i>
+      <div class='ui blue label'>IL</div>
+      C#
+    </div>
+  </div>
+</div>
+
+<h2>Image</h2>
+<p>Similar to icon on an item</p>
+
+<h1>States</h1>
+<p>Loading, Error, Active, Disabled</p>
+
+<h1>Variation</h1>
+<h2>Scrolling</h2>
+<p>Scroll controll appears when the list of item is long.</p>
+<div class='ui selection dropdown'>
+  <div class='text'></div>
+  <i class='dropdown icon'></i>
+  <div class='menu'>
+    <div class='item'>C</div>
+    <div class='item'>C++</div>
+    <div class='item'>C#</div>
+    <div class='item'>Java</div>
+    <div class='item'>JavaScript</div>
+    <div class='item'>Ruby</div>
+    <div class='item'>Haskell</div>
+    <div class='item'>Php</div>
+    <div class='item'>Python</div>
+    <div class='item'>Lisp</div>
+  </div>
+</div>
+
+<h2>Direction</h2>
+<div class='ui centered grid'>
+  <div class='ui floating labeled dropdown'>
+    <span class='text'>Platforms</span>
+    <i class='dropdown icon'></i>
+    <div class='menu'>
+      <div class='item'>
+        <i class='left dropdown icon'></i>
+        <span class='text'>CLR</span>
+        <div class='left menu'>
+          <div class='item'>VB</div>
+          <div class='item'>C#</div>
         </div>
-
       </div>
-    </section><!-- End Blog Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+       <div class='item'>
+        <i class='right dropdown icon'></i>
+        <span class='text'>JVM</span>
+        <div class='right menu'>
+          <div class='item'>Java</div>
+          <div class='item'>Scala</div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
+<h1>Behaviors</h1>
+<h2>Selection Config</h2>
+<p>activate, combo, select, hide, function(text, value), nothing</p>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
+<p>setup menu, refresh, toggle, show, hide, clear, hide others, restore defaults, restore default text, restore default value, save defaults, set selected(value), set selected([value1, value2]), set exactly([value1, value2]), set text, set value, get text, get value, get item(value), bind touch events,bind mouse events, bind intent, unbind intent, determine intent, set active, set visible, remove active, is selection, is animated, is visible, is hidden, get default text, get placeholder text</p>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
+<h2>Common Settings</h2>
+<p>on, allowAdditions, action, match, forceSelection, allowCategorySelection, placeholder</p>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
+<h2>Multi-Select Settings</h2>
+<p>userLables, maxSelections, glyphWidth, label</p>
 
-          </div>
+<h2>General Settings</h2>
+<p>direction, keepOnScreen, context, fullTextSearch, preserveHtml, sortSelect, showOnFocus, allowTab, transition, duration, keys, delay.</p>
 
-          <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Eterna</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
+<h1>Callbacks</h1>
+<p>onChange, onAdd, onRemove, onLableCreate, onLabelRemove, onLabelSelect, onNoResults, onShow, onHide</p>
+<script>
+document.getElementsByClassName('.dropdown').dropdown();
 
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Eterna</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
- <script src="{%static 'vendor/jquery/jquery.min.js'%}"></script>
-  <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-  <script src="{%static 'vendor/jquery.easing/jquery.easing.min.js'%}"></script>
-  <script src="{%static 'vendor/php-email-form/validate.js'%}"></script>
-  <script src="{%static 'vendor/jquery-sticky/jquery.sticky.js'%}"></script>
-  <script src="{%static 'vendor/owl.carousel/owl.carousel.min.js'%}"></script>
-  <script src="{%static 'vendor/waypoints/jquery.waypoints.min.js'%}"></script>
-  <script src="{%static 'vendor/counterup/counterup.min.js'%}"></script>
-  <script src="{%static 'vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
-  <script src="{%static 'vendor/venobox/venobox.min.js'%}"></script>
-
-
-  <!-- Template Main JS File -->
-  <script src="{%static 'js/main.js'%}"></script>
-
+</script>
 </body>
-
 </html>

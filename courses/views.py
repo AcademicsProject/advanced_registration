@@ -31,8 +31,11 @@ def home(request):
 
 
 def details(request,slug):
+    
+    course = Course.objects.get(slug=slug)
+    eligible = 0 
+    
     if request.method == 'POST':
-        print(slug)
         profile = Profile.objects.get(user = request.user)
         course = Course.objects.get(slug=slug)
 
@@ -44,14 +47,16 @@ def details(request,slug):
             
             prereq = prereq.exclude(pre_course__in = cleared.values_list('course',flat=True) )
 
+            
             if(len(prereq)==0):
                 Profile_Course.objects.create(profile=profile , course=course,status='R')
 
-        context = {'slug':slug , 'prereq':prereq  }
+    
+        context = {'course':course , 'prereq':prereq  , 'eligible':eligible }
         return render(request ,'courses/details.html',context )
 
     if request.method == 'GET':
-        context = {'slug':slug}
+        context = {'course':course}
         return render(request ,'courses/details.html',context )
         
 
