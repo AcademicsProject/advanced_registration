@@ -18,13 +18,38 @@
         <h2>{{course.name}}</h2>
 
         <ol>
-        {% if eligible=1 %}        
-        <form action="" method ='POST'>
-        {% csrf_token %}
-          <li><button type='submit' ><h4>Register</h4></button></li>
+        {% ifequal course.status 'A'  %}
+        
+          {% ifequal eligible 'A' %} 
+          <form action="" method ='POST'>
+          {% csrf_token %}
+            <li><button type='submit' ><h5>Register</h5></button></li>
+          </form>
+          
 
-        </form>
-        {% endif %}
+
+          {% endifequal %}
+
+        {% ifequal eligible 'C' %}
+        <h5>Creditted</h5>
+        {% endifequal %}
+
+        {% ifequal eligible 'R' %}
+        <h5>Registered</h5>
+        {% endifequal %}
+        
+        
+        {% ifequal eligible 'N' %}
+              <h5>Not Eligible</h5>
+        {% endifequal %}
+          
+        {% else %}
+        <h5>Not Available</h5>
+
+        {% endifequal %}
+
+
+
         </ol>
 
       </div>
@@ -43,18 +68,20 @@
           <div class="col-lg-6 pt-4 pt-lg-2 content">
             
             <ul>
-              <li><i class="icofont-close-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi</li>
+              {% for clear in cleared %}
+              
+              <li><i class="icofont-check-circled"></i> {{clear}}</li>
+              {% endfor %}
+              
             </ul>
 
           </div>
           <div class="col-lg-6 pt-4 pt-lg-2 content">
             
             <ul>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi</li>
+              <{% for pre in prereq %}
+              <li><i class="icofont-close-circled"></i> {{clear}}</li>
+              {% endfor %}
             </ul>
             
           </div>

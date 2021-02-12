@@ -33,31 +33,34 @@ def home(request):
 def details(request,slug):
     
     course = Course.objects.get(slug=slug)
-    eligible = 0 
+    eligible = 'N' 
+    profile = Profile.objects.get(user = request.user)
     
-    if request.method == 'POST':
-        profile = Profile.objects.get(user = request.user)
-        course = Course.objects.get(slug=slug)
-
-        if Profile_Course.objects.filter(profile = profile , course=course).exists() :
-            return HttpResponse('ERROR ALready enrolled ') 
-        else:
-            prereq = Prerequisite.objects.filter(course = course).values_list('pre_course',flat=True)
-            cleared = Profile_Course.objects.filter(profile=profile , course__in = prereq ,status='C')
-            
-            prereq = prereq.exclude(pre_course__in = cleared.values_list('course',flat=True) )
-
-            
-            if(len(prereq)==0):
-                Profile_Course.objects.create(profile=profile , course=course,status='R')
-
+    prereq = Prerequisite.objects.filter(course = course).values_list('pre_course',flat=True)
     
-        context = {'course':course , 'prereq':prereq  , 'eligible':eligible }
-        return render(request ,'courses/details.html',context )
+    cleared = Profile_Course.objects.filter(profile=profile  ,status='C').values_list('course',flat=True)
+    current = Profile_Course.objects.filter(profile=profile ,status='R').values_list('course',flat=True)
+    
+    cleared = Course.objects.filter(id__in = cleared)
+    current = Course.objects.filter(id__in = current)
 
-    if request.method == 'GET':
-        context = {'course':course}
-        return render(request ,'courses/details.html',context )
+    cleared_p = cleared.filter(course__in = prereq)
+    prereq = prereq.exclude(pre_course__in = cleared_p )
+
+
+    if course in cleared:
+        eligible='C'
+    elif course in current:
+        eligible='R'
+    elif len(prereq)==0:
+        eligible='A'
+    
+    if request.method == 'POST':    
+        if(len(prereq)==0):
+            Profile_Course.objects.create(profile=profile , course=course,status='R')
+
+    context = { 'course':course  ,'eligible' :eligible ,'prereq':prereq ,'cleared':cleared_p}    
+    return render(request ,'courses/details.html',context )
         
 
 def tracks(request):
