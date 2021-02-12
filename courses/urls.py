@@ -5,7 +5,7 @@ urlpatterns = [
     
         path('', views.home , name='courses_home'),
         path('tracks/', views.tracks , name='tracks'),
-        path('details/<slug:slug>', views.details, name="details"),
+        path('details/<slug:slug>', views.details, name="course_details"),
 
 
 ]
