@@ -232,10 +232,10 @@
 
     </tr>
     
-    {% for course in courses %}
+    {% for short in shortlist %}
     
-    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td><td>
-      <a href="{% url 'course_details' course.slug%}">Link</a></td></tr>
+    <tr><td>{{short.roll}}</td><td>{{short.name}}</td><td>{{short.user.email}}</td>
+      </tr>
     
     {% endfor %}
     
@@ -254,11 +254,10 @@
               <h3 class="sidebar-title">Add Necessary Courses</h3>
               <div class="sidebar-item search-form">
 
-                <form action="" method="POST">
+                <form action="">
 
                   {% csrf_token %}
 
-                  <input type="text" name='search'>
                   <section><label><span>Filter</span><select name="course" id="course" multiple="multiple" placeholder="Filter by..." style="width: 30em">
                     {% for course in courses %}
 

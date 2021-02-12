@@ -41,25 +41,36 @@ def details(request,slug):
     cleared = Profile_Course.objects.filter(profile=profile  ,status='C').values_list('course',flat=True)
     current = Profile_Course.objects.filter(profile=profile ,status='R').values_list('course',flat=True)
     
-    cleared = Course.objects.filter(id__in = cleared)
+    cleared = Course.objects.filter(id__in = cleared).values_list('id',flat=True)
     current = Course.objects.filter(id__in = current)
 
-    cleared_p = cleared.filter(course__in = prereq)
-    prereq = prereq.exclude(pre_course__in = cleared_p )
 
+    prereq_list = []
+    cleared_list = []
+    for pre in prereq:
+        if pre in cleared :
+            cleared_list.append(pre)
+        else:
+            prereq_list.append(pre)
 
-    if course in cleared:
+     
+    if course.id in cleared:
         eligible='C'
-    elif course in current:
+    elif course.id in current:
         eligible='R'
-    elif len(prereq)==0:
+    elif len(prereq_list)==0:
         eligible='A'
     
     if request.method == 'POST':    
-        if(len(prereq)==0):
+        if(len(prereq_list)==0):
             Profile_Course.objects.create(profile=profile , course=course,status='R')
+            eligible='R'
 
-    context = { 'course':course  ,'eligible' :eligible ,'prereq':prereq ,'cleared':cleared_p}    
+    prereq = Course.objects.filter(id__in = prereq_list)
+    cleared = Course.objects.filter(id__in = cleared_list)
+
+    print(prereq,cleared)
+    context = { 'course':course  ,'eligible' :eligible ,'prereq':prereq ,'cleared':cleared}    
     return render(request ,'courses/details.html',context )
         
 

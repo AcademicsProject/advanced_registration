@@ -1,4 +1,6 @@
 from django.shortcuts import render,HttpResponse
+from user.models import Profile
+from courses.models import Profile_Course ,Course
 
 # Create your views here.
 
@@ -8,17 +10,20 @@ def home(request):
 
 	courses = Course.objects.all()
 
-	if request.method == 'POST':
-		selected = request.POST.get('selected')
-	
-	if selected is None:
-		shortlist = Profile.objects.all()
-	else:
-		shortlist = Profile_Course.objects.filter(course__in = selected).values_list( roll ,flat=True)
-		shortlist = Profile.objects.filter( __in = shortlist )
-	
+	selected = request.GET.getlist('course')
+
+	shortlist = []
+	profiles = Profile.objects.all()
+
+	for profile in profiles:
+		cnt =0
+		for select in selected:
+			if(Profile_Course.objects.filter(profile=profile ,course=select).exists() ):
+				cnt+=1
+		if cnt == len(selected):
+			shortlist.append(profile)	
 	context = {
-		'courses' : courses
+		'courses' : courses,
 		'shortlist':shortlist
 	}
 	return render(request , 'recruiter/home.html' , context)
