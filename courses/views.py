@@ -40,6 +40,9 @@ def details(request,slug):
     
     cleared = Profile_Course.objects.filter(profile=profile  ,status='C').values_list('course',flat=True)
     current = Profile_Course.objects.filter(profile=profile ,status='R').values_list('course',flat=True)
+
+    #print(profile)
+
     
     cleared = Course.objects.filter(id__in = cleared).values_list('id',flat=True)
     current = Course.objects.filter(id__in = current)
@@ -68,8 +71,7 @@ def details(request,slug):
 
     prereq = Course.objects.filter(id__in = prereq_list)
     cleared = Course.objects.filter(id__in = cleared_list)
-
-    print(prereq,cleared)
+    #print(prereq,cleared)
     context = { 'course':course  ,'eligible' :eligible ,'prereq':prereq ,'cleared':cleared}    
     return render(request ,'courses/details.html',context )
         

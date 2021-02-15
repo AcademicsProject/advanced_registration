@@ -244,7 +244,6 @@
 </div>
             
           </div><!-- End blog entries list -->
-
           
 
           <div class="col-lg-4">
@@ -256,13 +255,16 @@
 
                 <form action="">
 
-                  {% csrf_token %}
-
                   <section><label><span>Filter</span><select name="course" id="course" multiple="multiple" placeholder="Filter by..." style="width: 30em">
                     {% for course in courses %}
 
+                    {% if course.id in selected %}
+
+                      <option value="{{course.id}}" selected>{{course.name}}</option>
+                    {% else %}
+
                     <option value="{{course.id}}">{{course.name}}</option>
-                    
+                    {% endif %}
                     {% endfor %}
 
                     </select></label>

@@ -24,7 +24,8 @@ def home(request):
 			shortlist.append(profile)	
 	context = {
 		'courses' : courses,
-		'shortlist':shortlist
+		'shortlist':shortlist,
+		'selected' : selected
 	}
 	return render(request , 'recruiter/home.html' , context)
 

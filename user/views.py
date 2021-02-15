@@ -17,7 +17,7 @@ def signup(request):
         confirm = request.POST.get('confirm')
 
         user= User.objects.create_user(roll,email,password)
-        profile =Profile(name=name)
+        profile =Profile(name=name , user = user)
         profile.save()
         return redirect('/')
     else:

@@ -140,12 +140,13 @@ table {
 
               </div><!-- End sidebar search formn-->
 
-          
+              
               <h3 class="sidebar-title">Tracks</h3>
               <div class="sidebar-item tags">
                 <ul>
+                  
                 {% for track in tracks  %}
-                 {% if track.id is trackId %}
+                 {% if track.id == trackId %}
                   <li><a style="background: #e96b56;color: white"href="../courses?track={{track.id}}">{{track.name}}</a></li>
                  {% else %} 
                   <li><a href="../courses?track={{track.id}}">{{track.name}}</a></li>
