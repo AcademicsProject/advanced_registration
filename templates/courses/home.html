@@ -107,16 +107,14 @@ table {
       <th>Course ID</th>
       <th>Name</th>
       <th>Status</th>
-      <th>Link</th>
+      <th>Coordinator</th>
 
-      
-      
-
+    
     </tr>
     
     {% for course in courses %}
     
-    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td><td><a href="details/{{course.slug}}">Link</a></td></tr>
+    <tr><td>{{course.id}}</td><td><a href="details/{{course.slug}}">{{course.name}}</a></td><td>{{course.status}}</td><td>{{course.teacher}}</td></tr>
     
     {% endfor %}
     
