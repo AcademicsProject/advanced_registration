@@ -25,7 +25,7 @@ SECRET_KEY = '&0o15^6deun=6chmrzbaqbrl=lgdzu8^t2&5b%%q-@7f1xyn_e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['improvised-course-registration.herokuapp.com']
+ALLOWED_HOSTS = ['improvised-course-registration.herokuapp.com' , '127.0.0.1']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
