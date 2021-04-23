@@ -54,6 +54,10 @@ def logout_fn(request):
 
 
 
+def contact(request):
+    return render(request,'user/contact.html')
+
+
 
 
 

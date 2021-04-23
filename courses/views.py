@@ -82,4 +82,3 @@ def tracks(request):
     return render(request,'courses/tracks.html',context)
 
 
-
