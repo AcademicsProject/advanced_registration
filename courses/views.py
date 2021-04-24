@@ -32,6 +32,9 @@ def home(request):
 
 def details(request,slug):
     
+    if request.user.is_authenticated==0:
+        return HttpResponse("Please Login First")
+
     course = Course.objects.get(slug=slug)
     eligible = 'N' 
     profile = Profile.objects.get(user = request.user)
