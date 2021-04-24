@@ -19,9 +19,7 @@ class Course(models.Model):
     practicals= models.IntegerField(default=0)
     exams= models.IntegerField(default=0)
 
-
     
-
     relation = models.ManyToManyField(
         Profile,
         through='Profile_Course',
