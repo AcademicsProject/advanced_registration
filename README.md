@@ -13,7 +13,7 @@
   <p align="center">
     An idea to make College Course Management Procedures more flexible, transparent and easy to use
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">Link</a>
+    <a href="http://improvised-course-registration.herokuapp.com/">Link</a>
   </p>
 </p>
 
@@ -24,8 +24,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](http://improvised-course-registration.herokuapp.com)
-
+<p align="center">
+    <img src="static/img/intro.png" alt="Logo" width="80" height="80">
+  </a>
 Improvised Course Registration is majorly a project that can help students in colleges to make the most out of their college degree
 Here's why:
 * Check for all the prerequisites of a course before registering for it
