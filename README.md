@@ -29,9 +29,11 @@
   </a>
    <p >
 Improvised Course Registration is majorly a project that can help students in colleges to make the most out of their college degree
+     <br />
 Here's why:
-* Check for all the prerequisites of a course before registering for it
-* Industry-relevant tracks having courses offered by the college that students can follow according to their interests
-* Completely transparent Course details so that students have all information related to all the courses beforehand like Labs, Assignments, tests ,teachers etc 
-* Removes Branch Barriers ,  by helping recruiters shortlist the students on the basis of courses that they have done instead of their branch branch
+     <br />
+* Check for all the prerequisites of a course before registering for it <br />
+* Industry-relevant tracks having courses offered by the college that students can follow according to their interests <br />
+* Completely transparent Course details so that students have all information related to all the courses beforehand like Labs, Assignments, tests ,teachers etc  <br />
+* Removes Branch Barriers ,  by helping recruiters shortlist the students on the basis of courses that they have done instead of their branch branch <br />
 </p>
