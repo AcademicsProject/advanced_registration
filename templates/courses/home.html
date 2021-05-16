@@ -84,11 +84,8 @@ table {
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Blog</li>
-        </ol>
-        <h2>Blog</h2>
+        
+        <h2>Courses</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -107,16 +104,14 @@ table {
       <th>Course ID</th>
       <th>Name</th>
       <th>Status</th>
-      <th>Link</th>
+      <th>Coordinator</th>
 
-      
-      
-
+    
     </tr>
     
     {% for course in courses %}
     
-    <tr><td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.status}}</td><td><a href="details/{{course.slug}}">Link</a></td></tr>
+    <tr><td>{{course.id}}</td><td><a href="details/{{course.slug}}">{{course.name}}</a></td><td>{{course.status}}</td><td>{{course.teacher}}</td></tr>
     
     {% endfor %}
     
