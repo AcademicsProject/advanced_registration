@@ -8,19 +8,12 @@
     <img src="static/img/favicon.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Improvised Course Registration</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An idea to make College Course Management Procedures more flexible, transparent and easy to use
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/othneildrew/Best-README-Template">Link</a>
   </p>
 </p>
 
