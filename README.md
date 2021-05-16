@@ -25,7 +25,7 @@
 ## About The Project
 
 <p align="center">
-    <img src="static/img/intro.png" alt="Logo" width="80" height="80">
+    <img src="static/img/intro.png" alt="Logo" width="280" height="280">
   </a>
 Improvised Course Registration is majorly a project that can help students in colleges to make the most out of their college degree
 Here's why:
