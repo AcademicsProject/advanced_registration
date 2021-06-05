@@ -35,5 +35,5 @@ Here's why:
 * Check for all the prerequisites of a course before registering for it <br /> <br />
 * Industry-relevant tracks having courses offered by the college that students can follow according to their interests <br /> <br />
 * Completely transparent Course details so that students have all information related to all the courses beforehand like Labs, Assignments, tests ,teachers etc  <br /> <br />
-* Removes Branch Barriers ,  by helping recruiters shortlist the students on the basis of courses that they have done instead of their branch branch <br /> <br />
+* Removes Branch Barriers ,  by helping recruiters shortlist the students on the basis of courses that they have done instead of their stream/branch <br /> <br />
 </p>
